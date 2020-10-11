@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :products
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, skip: [:registrations]
+
+  get '/products', to: 'products#index'
+  get 'products/:id', to: 'products#show'
+
+  authenticate :user do
+    resources :products
+  end
 end
