@@ -13,16 +13,16 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/new
-  def new
-    @product = Product.new
-  end
+  # def new
+  #   @product = Product.new
+  # end
 
   # # GET /products/1/edit
   # def edit
   # end
-  #
-  # # POST /products
-  # # POST /products.json
+
+  # POST /products
+  # POST /products.json
   # def create
   #   @product = Product.new(product_params)
   #
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
   #     end
   #   end
   # end
-  #
+
   # # PATCH/PUT /products/1
   # # PATCH/PUT /products/1.json
   # def update

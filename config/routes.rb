@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   authenticate :user do
 
-    resource :admin do
+    namespace :admin do
       resources :products
     end
+
   end
 end

@@ -2,23 +2,23 @@ module Admin
   class ProductsController < ApplicationController
     before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-    # GET /products
-    # GET /products.json
+    # GET /admin/products
+    # GET /admin/products.json
     def index
       @products = Product.all
     end
 
-    # GET /products/1
-    # GET /products/1.json
+    # GET /admin/products/1
+    # GET /admin/products/1.json
     def show
     end
 
-    # GET /products/new
+    # GET /admin/products/new
     def new
       @product = Product.new
     end
 
-    # GET /products/1/edit
+    # GET /admin/products/1/edit
     def edit
     end
 
@@ -29,8 +29,8 @@ module Admin
 
       respond_to do |format|
         if @product.save
-          format.html { redirect_to @product, notice: 'Product was successfully created.' }
-          format.json { render :show, status: :created, location: @product }
+          format.html { redirect_to admin_product_path(@product), notice: 'Product was successfully created FYCJK.' }
+          format.json { render :show, status: :created, location: product }
         else
           format.html { render :new }
           format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -43,7 +43,7 @@ module Admin
     def update
       respond_to do |format|
         if @product.update(product_params)
-          format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+          format.html { redirect_to admin_product_path(@product), notice: 'Product was successfully updated.' }
           format.json { render :show, status: :ok, location: @product }
         else
           format.html { render :edit }
