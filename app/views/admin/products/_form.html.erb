@@ -26,6 +26,16 @@
     <%= form.text_field :price, id: :price %>
   </div>
 
+  <div class="field">
+    <%= form.label :main_image, 'Main Product Image' %>
+    <%= form.file_field :main_image, id: :main_image %>
+    <% if form.object.main_image? %>
+      <%= image_tag form.object.main_image.thumb.url %>
+      <%= form.label :remove_image %>
+      <%= form.check_box :remove_image %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

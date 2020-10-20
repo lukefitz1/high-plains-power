@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Main Image:</strong>
+  <% if @product.main_image.thumb.url %>
+    <%= image_tag @product.main_image.thumb.url %>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @product.name %>
 </p>

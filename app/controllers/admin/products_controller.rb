@@ -71,7 +71,7 @@ module Admin
     # Only allow a list of trusted parameters through.
     def product_params
       # params.fetch(:product, {})
-      params.require(:product).permit(:name, :description, :price)
+      params.require(:product).permit(:name, :description, :price, :main_image, :additional_image_one, :additional_image_two, :additional_image_three)
     end
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_10_185939) do
+ActiveRecord::Schema.define(version: 2020_10_20_014342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 2020_10_10_185939) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "main_image"
+    t.string "additional_image_one"
+    t.string "additional_image_two"
+    t.string "additional_image_three"
   end
 
   create_table "users", force: :cascade do |t|
